@@ -62,6 +62,8 @@ Thanks!
 | ftitle       | Flask title        |
 | fvar         | Flask var          |
 | fcontent     | Flask content      |
+| fsurl        | Flask static url   |
+| fwith        | Flask with         |
 
 ## Release Notes
 
