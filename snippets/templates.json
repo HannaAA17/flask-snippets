@@ -13,7 +13,7 @@
     },
     "Flask block": {
         "prefix": "fblock",
-        "body": "{% ${1:block} ${2:foo} %}$3{% end${1:block} %}\n$0"
+        "body": "{% block ${1:foo} %}$2{% endblock ${1:foo} %}$0"
     },
     "Flask extends": {
         "prefix": "fextends",
@@ -57,11 +57,11 @@
     },
     "Flask include": {
         "prefix": "finclude",
-        "body": "{% include \"${1:template}\" %}$0"
+        "body": "{% include '${1:template}' %}$0"
     },
     "Flask import": {
         "prefix": "fimport",
-        "body": "{% import \"${1:template}\" as ${2:alias} %}\n$0"
+        "body": "{% import '${1:template}' as ${2:alias} %}\n$0"
     },
     "Flask from import": {
         "prefix": "ffrom",
@@ -74,7 +74,11 @@
     },
     "Flask url": {
         "prefix": "furl",
-        "body": "{{ url_for(\"${1:template}\") }}$0"
+        "body": "{{ url_for('${1:template}') }}$0"
+    },
+    "Flask static url": {
+        "prefix": "fsurl",
+        "body": "{{ url_for('static', filename='${1:css/file.css}') }}$0"
     },
     "Flask title": {
         "prefix": "ftitle",
@@ -87,5 +91,13 @@
     "Flask content block": {
         "prefix": "fcontent",
         "body": "{% block content %}\n\t${1:Some content}\n{% endblock %}"
+    },
+    "Flask with": {
+        "prefix": "fwith",
+        "body": "{% with ${1:foo}=${2:'42'} %}\n\t${3:foo}\n{% endwith %}$0"
+    },
+    "Flask indent": {
+        "prefix": "findent",
+        "body": "{% filter indent(${1:4}) -%} ${2:} {%- endfilter %}$0"
     }
 }

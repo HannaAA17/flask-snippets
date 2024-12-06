@@ -16,8 +16,8 @@
     "Flask route": {
         "prefix": "route",
         "body": [
-            "@app.route('/${1:route_name}')",
-            "def ${2:method_name}():",
+            "@${1:app}.route('/${2:route_name}')",
+            "def ${3:method_name}():",
             "    pass$0"
         ]
     },
